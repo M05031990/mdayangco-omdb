@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextStyle">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextStyle.Normal" parent="TextStyle">
+        <item name="android:textSize">@dimen/font_size_normal</item>
+    </style>
+
+    <style name="TextStyle.Small" parent="TextStyle">
+        <item name="android:textSize">@dimen/font_size_small</item>
+    </style>
+
+    <style name="TextStyle.Medium" parent="TextStyle">
+        <item name="android:textSize">@dimen/font_size_medium</item>
+    </style>
+
+    <style name="TextStyle.Large" parent="TextStyle">
+        <item name="android:textSize">@dimen/font_size_large</item>
+    </style>
+
+    <style name="TextStyle.Item.Title" parent="TextStyle.Normal">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">@color/white</item>
+        <item name="android:shadowRadius">8</item>
+        <item name="android:background">@color/item_title_bg</item>
+    </style>
+
+    <style name="TextStyle.Item.Year" parent="TextStyle.Small">
+        <item name="android:textColor">@color/teal_200</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">@color/black</item>
+        <item name="android:shadowRadius">8</item>
+        <item name="android:background">@color/item_title_bg</item>
+    </style>
+
+    <style name="TextStyle.Details.Title" parent="TextStyle.Large">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:shadowColor">@color/purple_200</item>
+        <item name="android:shadowRadius">24</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="TextStyle.Details.Rated" parent="TextStyle.Medium">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/holo_red_dark</item>
+        <item name="android:shadowColor">@color/black</item>
+        <item name="android:shadowRadius">24</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="TextStyle.Details.Highlight.Medium" parent="TextStyle.Medium">
+        <item name="android:textColor">@color/teal_200</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">@color/black</item>
+        <item name="android:shadowRadius">24</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="TextStyle.Details.Highlight.Title" parent="TextStyle.Small">
+        <item name="android:textColor">@color/purple_200</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">@color/black</item>
+        <item name="android:shadowRadius">24</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">10sp</item>
+
+    </style>
+
+    <style name="TextStyle.Details.Medium" parent="TextStyle.Normal">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:shadowColor">@color/black</item>
+        <item name="android:shadowRadius">16</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+</resources>

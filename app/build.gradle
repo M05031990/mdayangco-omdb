@@ -1,0 +1,103 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.mdq.mdayangcomovies"
+        minSdk 24
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.chethanbhandarkar.imbd.HiltTestRunner"
+
+        buildConfigField("String","BASE_URL",omdb_base_url)
+        buildConfigField("String","API_KEY",omdb_api_key)
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    dataBinding {
+        enabled true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.5.0'
+    implementation 'androidx.appcompat:appcompat:1.5.0'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //Lifecycle
+    def versionLifecycle = "2.5.1"
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$versionLifecycle")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$versionLifecycle")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$versionLifecycle")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:$versionLifecycle")
+
+    // Coroutines
+    def versionCoroutines = "1.6.4"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versionCoroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versionCoroutines"
+
+    //Retrofit
+    def versionRetrofit = "2.9.0"
+    implementation "com.squareup.retrofit2:retrofit:$versionRetrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$versionRetrofit"
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.1'
+
+    // Hilt
+    def versionHilt = "2.44"
+    implementation "com.google.dagger:hilt-android:$versionHilt"
+    kapt "com.google.dagger:hilt-android-compiler:$versionHilt"
+    kapt 'androidx.hilt:hilt-compiler:1.0.0'
+
+    // Room
+    def versionRoom = "2.4.0"
+    implementation("androidx.room:room-runtime:$versionRoom")
+    kapt("androidx.room:room-compiler:$versionRoom")
+    implementation("androidx.room:room-ktx:$versionRoom")
+    testImplementation("androidx.room:room-testing:$versionRoom")
+    implementation("androidx.room:room-paging:$versionRoom")
+
+    //Paging
+    def versionPaging="3.1.1"
+    implementation("androidx.paging:paging-runtime-ktx:$versionPaging")
+    testImplementation("androidx.paging:paging-common-ktx:$versionPaging")
+
+    //Glide
+    def versionGlide="4.12.0"
+    implementation "com.github.bumptech.glide:glide:$versionGlide"
+    annotationProcessor "com.github.bumptech.glide:compiler:$versionGlide"
+
+    //Loading
+}

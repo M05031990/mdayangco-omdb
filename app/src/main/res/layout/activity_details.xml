@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/bind:"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.details.DetailsActivity">
+
+    <data>
+
+        <variable
+            name="genre"
+            type="String" />
+
+        <variable
+            name="release"
+            type="String" />
+
+        <variable
+            name="plot"
+            type="String" />
+
+        <variable
+            name="language"
+            type="String" />
+
+        <variable
+            name="country"
+            type="String" />
+
+        <variable
+            name="directors"
+            type="String" />
+
+        <variable
+            name="writers"
+            type="String" />
+
+        <variable
+            name="stars"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorPrimaryVariant">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/details_poster_bg_height"
+            android:alpha="0.5"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/details_poster_bg_height">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/fade_bottom" />
+
+                    <ImageButton
+                        android:id="@+id/btnBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/space_medium"
+                        android:backgroundTint="@color/purple_700"
+                        android:elevation="8dp"
+                        android:src="@drawable/ic_back"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/txtTitle"
+                        style="@style/TextStyle.Details.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="marquee"
+                        android:includeFontPadding="false"
+                        android:lines="1"
+                        android:text="@string/empty_string"
+                        app:layout_constraintBottom_toTopOf="@+id/txtYear"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/materialCardView"
+                        android:layout_width="@dimen/details_poster_size"
+                        android:layout_height="@dimen/details_poster_size"
+                        android:layout_margin="@dimen/space_normal"
+                        app:cardBackgroundColor="@color/purple_700"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="18dp"
+                        app:layout_constraintBottom_toTopOf="@+id/txtRated"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:strokeColor="@color/purple_200"
+                        app:strokeWidth="1dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/imgPoster"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:scaleType="centerCrop"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.0"
+                                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/txtRated"
+                        style="@style/TextStyle.Details.Rated"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="@string/empty_string"
+                        app:layout_constraintBottom_toTopOf="@+id/txtTitle"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txtYear"
+                        style="@style/TextStyle.Details.Highlight.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="@string/empty_string"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/colorPrimaryVariant"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <include
+                            layout="@layout/layout_details_line"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/space_medium"
+                            android:layout_marginTop="@dimen/space_small"
+                            android:layout_marginEnd="@dimen/space_medium"
+                            android:layout_marginBottom="@dimen/space_small"
+                            android:layout_weight="1"
+                            bind:textDetailInfo="@{genre}"
+                            bind:textDetailTitle="@{@string/genre}" />
+
+                        <include
+                            layout="@layout/layout_details_line"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/space_medium"
+                            android:layout_marginTop="@dimen/space_small"
+                            android:layout_marginEnd="@dimen/space_medium"
+                            android:layout_marginBottom="@dimen/space_small"
+                            android:layout_weight="1"
+                            bind:textDetailInfo="@{release}"
+                            bind:textDetailTitle="@{@string/release}" />
+                    </LinearLayout>
+
+
+                    <include
+                        layout="@layout/layout_details_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_medium"
+                        android:layout_marginTop="@dimen/space_small"
+                        android:layout_marginEnd="@dimen/space_medium"
+                        android:layout_marginBottom="@dimen/space_small"
+                        bind:hideTitle="@{true}"
+                        bind:textDetailInfo="@{plot}" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <include
+                            layout="@layout/layout_details_line"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/space_medium"
+                            android:layout_marginTop="@dimen/space_small"
+                            android:layout_marginEnd="@dimen/space_medium"
+                            android:layout_marginBottom="@dimen/space_small"
+                            android:layout_weight="1"
+                            bind:textDetailInfo="@{language}"
+                            bind:textDetailTitle="@{@string/language}" />
+
+                        <include
+                            layout="@layout/layout_details_line"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/space_medium"
+                            android:layout_marginTop="@dimen/space_small"
+                            android:layout_marginEnd="@dimen/space_medium"
+                            android:layout_marginBottom="@dimen/space_small"
+                            android:layout_weight="1"
+                            bind:textDetailInfo="@{country}"
+                            bind:textDetailTitle="@{@string/country}" />
+
+                    </LinearLayout>
+
+                    <include
+                        layout="@layout/layout_details_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_medium"
+                        android:layout_marginTop="@dimen/space_small"
+                        android:layout_marginEnd="@dimen/space_medium"
+                        android:layout_marginBottom="@dimen/space_small"
+                        bind:textDetailInfo="@{directors}"
+                        bind:textDetailTitle="@{@string/directors}" />
+
+                    <include
+                        layout="@layout/layout_details_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_medium"
+                        android:layout_marginTop="@dimen/space_small"
+                        android:layout_marginEnd="@dimen/space_medium"
+                        android:layout_marginBottom="@dimen/space_small"
+                        bind:textDetailInfo="@{writers}"
+                        bind:textDetailTitle="@{@string/writers}" />
+
+                    <include
+                        layout="@layout/layout_details_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_medium"
+                        android:layout_marginTop="@dimen/space_small"
+                        android:layout_marginEnd="@dimen/space_medium"
+                        android:layout_marginBottom="@dimen/space_small"
+                        bind:textDetailInfo="@{stars}"
+                        bind:textDetailTitle="@{@string/stars}" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

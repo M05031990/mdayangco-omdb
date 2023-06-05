@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">MDayangco Movies</string>
+    <string name="title_movie">Movie</string>
+    <string name="title_series">Series</string>
+    <string name="title_episodes">New Episodes</string>
+    <string name="search">Search</string>
+    <string name="generic_error"> Something went wrong. Failed to request data.</string>
+    <string name="empty_string">--</string>
+    <string name="genre">Genre</string>
+    <string name="release">Release</string>
+    <string name="language">Language</string>
+    <string name="country">Country</string>
+    <string name="directors">Directors</string>
+    <string name="writers">Writers</string>
+    <string name="stars">Actors</string>
+    <string name="no_result">No Result.</string>
+    <string name="filter">Filter</string>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_movie">
+
+    <fragment
+        android:id="@+id/navigation_movie"
+        android:name="com.mdq.mdayangcomovies.ui.movie.MoviesFragment" />
+
+    <fragment
+        android:id="@+id/navigation_series"
+        android:name="com.mdq.mdayangcomovies.ui.series.SeriesFragment" />
+
+    <fragment
+        android:id="@+id/navigation_episodes"
+        android:name="com.mdq.mdayangcomovies.ui.episodes.EpisodesFragment" />
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.mdq.mdayangcomovies.ui.search.SearchFragment" />
+</navigation>
